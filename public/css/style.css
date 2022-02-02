@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*{
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.navbar .navbar-nav .nav-link{
+  font-family: 'Merriweather', sans-serif;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.nav-item a{
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+
+.border-hover:hover{
+  border-bottom: 2px solid #fff;
+}
+
+.nav-item a.active{
+  border-bottom: 2px solid #fff;
+}
+
+main{
+  font-family: 'Oswald', sans-serif;
+}
+
+#link_index{
+  background-color: #d79a10;
+  color: #000;
+}
+
+#color_typewriter{
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #d79a10;
+  font-weight: bolder;
+  color: #000;
+}
+
+.modal-content{
+  color: #000;
+  font-family: 'Raleway', sans-serif ;
+}
+
+.active-modal{
+  background-color: #e5ecf4 !important;
+}
+
+.login_shadow{
+  -webkit-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+  -moz-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+  box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+  z-index:1;
+}
+
+.signup_shadow{
+  -webkit-box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
+  -moz-box-shadow: -5px -5px 6px 0px rgba(82,82,82,0.52);
+  box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
+}
+
+.btn-style{
+  background-color: #8b1d31;
+  color: #fff;
+  font-weight: 500;
+}
+
+.btn-style:hover{
+  color: rgba(255, 255, 255, 0.692);
+}
+
+.bi-pencil-square{
+  padding-right: 5px;
+}
+
+.bi-box-arrow-in-right{
+  padding-right: 5px;
+}
+
+.input{
+	font-size: 20px;
+	padding: 10px 10px 10px 5px;
+  display: block;
+	background: none;
+	color: #636363;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #757575;
+}
+
+.input:focus, .input2:focus{ 
+  outline: none; 
+}
+
+.group1{
+  position: relative;
+  margin-top: 10px;
+}
+
+.group2{
+  position: relative;
+  margin-top: 30px;
+}
+
+.label{
+	color: #757575; 
+	font-size: 15px;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 15px;
+	transition: all 0.2s ease;
+}
+
+.input:focus ~ .label, .input.used ~ .label {
+	top: -20px;
+  transform: scale(.75); left: -10px;
+  font-size: 18px;
+	color: #4a89dc;
+}
+
+.input2:focus ~ .label, .input2.used ~ .label {
+	top: -20px;
+  transform: scale(.75); left: -25px;
+  font-size: 18px;
+	color: #4a89dc;
+}
+
+.forgot-password{
+  font-size: 12px;
+  display: flex;
+  margin-top: 5px;
+  margin-left: 2px;
+  text-decoration: none;
+}
+
+.highlight {
+	position: absolute;
+	height: 60%; 
+	width: 100px; 
+	top: 25%; 
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.input:focus ~ .bar:before, .input:focus ~ .bar:after{ 
+  width: 50%; 
+}
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.back_button{
+  border: none !important;
+  font-size: 30px;
+}
