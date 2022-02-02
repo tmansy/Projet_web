@@ -1,7 +1,7 @@
 <?php
 
 if(empty($_SESSION["login"])){
-    include("controllers/login_signup.php");
+    include("views/login_signup.php");
 }
 else{
 }

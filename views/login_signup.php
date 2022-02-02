@@ -16,10 +16,11 @@
                     <button class="nav-link" id="register-tab" data-bs-toggle="tab" href="#" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false"><b>S'inscrire</b></button>
                 </li>
             </ul>
+            <?php if(!empty($error_message)){ echo $error_message; } ?>
             <div class="modal-body active-modal">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                        <form action="" method="POST">
+                        <form action="login_signup" method="POST" >
                             <fiedlset>
                                 <div class="group1">
                                     <input required="" class="input" type="text" name="login_connexion"><span class="highlight"></span><span class="bar"></span>

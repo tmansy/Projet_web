@@ -1,14 +1,15 @@
 <?php
 
 require("models/users.php");
-include("views/login_signup.php");
 
 if(isset($_POST["login_inscription"]) && isset($_POST["password_inscription"]) && isset($_POST["password_verify_inscription"]) && isset($_POST["mail_inscription"])){
     if(getUserByLogin($_POST["login_inscription"])){
         $error_message = "Nom d'utilisateur déjà utilisé";
+        header("Location: ".ROOT_PATH);
     }
     else if(getUserByMail($_POST["mail_inscription"])){
         $error_message = "Adresse e-mail déjà utilisée";
+        header("Location: ".ROOT_PATH);
     }
     else if($_POST["password_inscription"] == $_POST["password_verify_inscription"]){
         $_SESSION["login"] = $_POST["login_inscription"];
@@ -30,6 +31,7 @@ if(isset($_POST["login_connexion"]) && isset($_POST["password_connexion"])){
     }
     else{
         $error_message = "Nom d'utilisateur ou mot de passe incorrect";   
+        header("Location: ".ROOT_PATH);
     }
 }
 
