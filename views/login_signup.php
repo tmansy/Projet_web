@@ -1,5 +1,7 @@
 <?php ob_start(); ?>
 
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 <div class="ms-auto">
     <button type="button" class="btn btn-style login-btn"><i class="bi bi-box-arrow-in-right"></i>Se connecter</button>
     <button type="button" class="btn btn-style register-btn"><i class="bi bi-pencil-square"></i>S'inscrire</button>
@@ -16,11 +18,21 @@
                     <button class="nav-link" id="register-tab" data-bs-toggle="tab" href="#" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false"><b>S'inscrire</b></button>
                 </li>
             </ul>
-            <?php if(!empty($error_message)){ echo $error_message; } ?>
             <div class="modal-body active-modal">
+            <?php 
+                if(!empty($_SESSION["error"])){
+                    echo "<script>
+                            $(document).ready(function(){
+                            $('#loginModal').modal('show');
+                            });
+                        </script>"; 
+                    echo "<div class='alert alert-danger'>".$_SESSION["error"]."</div>";
+                    unset($_SESSION["error"]); 
+                } 
+            ?>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                        <form action="login_signup" method="POST" >
+                        <form action="login" method="POST" >
                             <fiedlset>
                                 <div class="group1">
                                     <input required="" class="input" type="text" name="login_connexion"><span class="highlight"></span><span class="bar"></span>
@@ -40,7 +52,7 @@
                         </form>
                     </div>
                     <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                        <form action="" method="POST">
+                        <form action="signup" method="POST">
                             <fieldset>
                                 <div class="group1">
                                     <input required="required" class="input" type="text" name="login_inscription"><span class="highlight"></span><span class="bar"></span>

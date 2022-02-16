@@ -6,7 +6,7 @@ function getDB(){
 }
 
 function getUserByLogin($login){
-    $reponse = getDB()->prepare("SELECT * FROM users WHERE login =  :login");
+    $reponse = getDB()->prepare("SELECT * FROM users WHERE login = :login");
     $reponse->execute([":login" => $login]);
     $user = $reponse->fetch();
     $reponse->closeCursor();
@@ -22,7 +22,7 @@ function getUserByMail($mail){
 }
 
 function addUser($login, $password, $mail){
-    $reponse = getDB()->prepare("INSERT INTO users(login, password, mail) VALUES (:login, :password, :mail)");
+    $reponse = getDB()->prepare("INSERT INTO users(login, password, mail, type) VALUES (:login, :password, :mail, 'user')");
     $password = password_hash($password, PASSWORD_DEFAULT);
     $reponse->execute([":password" => $password, ":login" => $login, "mail" => $mail]);
     $reponse->closeCursor();

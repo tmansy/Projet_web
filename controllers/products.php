@@ -7,6 +7,6 @@ else{
     include("views/user_board.php");
 }
 
-include("views/home_page.php");
+include("views/products.php");
 
 ?>

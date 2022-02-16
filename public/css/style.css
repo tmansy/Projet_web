@@ -42,14 +42,18 @@ main{
 }
 
 #link_index{
-  background-color: #d79a10;
+  background-color: #8b1d31;
   color: #000;
+}
+
+.button_hover:hover{
+  background-color: #a7233b !important;
 }
 
 #color_typewriter{
   border: 1px solid #000;
   border-radius: 10px;
-  background-color: #d79a10;
+  background-color: #8b1d31;
   font-weight: bolder;
   color: #000;
 }
@@ -175,4 +179,18 @@ main{
 .back_button{
   border: none !important;
   font-size: 30px;
+}
+
+.card-group{  
+  width: 50rem;
+}
+
+.form_new_product{
+  color: #8b1d31;
+}
+
+@media screen and (min-width: 930px){
+  .media{
+    width: 50%;
+  }
 }
