@@ -1,7 +1,4 @@
-<?php 
-require("models/users.php");
-ob_start(); 
-?>
+<?php include("models/users.php"); ?>
 
 <div class="dropdown ms-auto px-4">
   <button class="btn btn-style dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -19,5 +16,3 @@ ob_start();
     <li><a class="dropdown-item" href="logout">Se déconnecter</a></li>
   </ul>
 </div>
-
-<?php $register = ob_get_clean(); ?>

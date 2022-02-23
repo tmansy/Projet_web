@@ -2,7 +2,7 @@
 
 session_start();
 
-define("ROOT_PATH", "/monprojet.devel/");
+define("ROOT_PATH", "/");
 $request = str_replace(ROOT_PATH, "", $_SERVER['REQUEST_URI']);
 $request = strtok($request, '?');
 $request = trim($request, '/');

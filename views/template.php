@@ -21,9 +21,9 @@
                 </button>
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <?php echo $nav; ?>
+                        <?php include("views/".$nav.".php"); ?>
                     </ul>
-                    <?php echo $register; ?>
+                    <?php include("views/".$register.".php"); ?>
                 </div>
             </div>
         </nav>
@@ -31,7 +31,7 @@
 
     <main>
         <?php if(!empty($error_message)){ echo $error_message; } ?>
-        <?php echo $content; ?>
+        <?php include("views/".$content.".php"); ?>
     </main>
 
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>

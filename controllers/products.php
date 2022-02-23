@@ -1,12 +1,15 @@
 <?php
 
+include("app/controllers.php");
+
+$content = "products";
+$nav = "nav";
+
 if(empty($_SESSION["login"])){
-    include("views/login_signup.php");
+    $register = "login_signup";
 }
 else{
-    include("views/user_board.php");
+    $register = "user_board";
 }
-
-include("views/products.php");
 
 ?>
