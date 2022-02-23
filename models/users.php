@@ -28,4 +28,18 @@ function addUser($login, $password, $mail){
     $reponse->closeCursor();
 }
 
+function getProductbyTitle($title){
+    $reponse = getDB()->prepare("SELECT * FROM products WHERE title = :title");
+    $reponse->execute([":title" => $title]);
+    $product = $reponse->fetch();
+    $reponse->closeCursor();
+    return $product;
+}
+
+function addProduct($title, $descr, $price){
+    $reponse = getDB()->prepare("INSERT INTO products(title, descr, price) VALUES (:title, :descr, :price)");
+    $reponse->execute([":title" => $title, ":descr" => $descr, ":price" => $price]);
+    $reponse->closeCursor();
+}
+
 ?>

@@ -8,7 +8,6 @@ if(isset($_POST["login_inscription"]) && isset($_POST["password_inscription"]) &
     $password_verify = htmlspecialchars($_POST["password_verify_inscription"]);
     $mail = htmlspecialchars($_POST["mail_inscription"]);
 
-
     if(getUserByLogin($login)){
         $_SESSION["error"] = "Nom d'utilisateur déjà utilisé"; 
         header("Location: ".ROOT_PATH);

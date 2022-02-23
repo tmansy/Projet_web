@@ -1,5 +1,4 @@
 <?php 
-$user = getUserByLogin($_SESSION["login"]);
 ob_start(); 
 ?>
 
