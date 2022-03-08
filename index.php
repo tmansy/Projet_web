@@ -3,7 +3,7 @@
 session_start();
 
 define("ROOT_PATH", "/");
-$request = str_replace(ROOT_PATH, "", $_SERVER['REQUEST_URI']);
+$request = $_SERVER['REQUEST_URI'];
 $request = strtok($request, '?');
 $request = trim($request, '/');
 $segments = array_filter(explode('/', $request));

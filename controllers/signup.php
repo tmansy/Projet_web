@@ -1,6 +1,6 @@
 <?php
 
-require("models/users.php");
+include_once("models/users.php");
 
 if(isset($_POST["login_inscription"]) && isset($_POST["password_inscription"]) && isset($_POST["password_verify_inscription"]) && isset($_POST["mail_inscription"])){
     $login = htmlspecialchars($_POST["login_inscription"]);

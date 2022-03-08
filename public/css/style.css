@@ -15,6 +15,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: #fff;
 }
 
@@ -189,8 +190,57 @@ main{
   color: #8b1d31;
 }
 
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+}
+
+.width_error{
+  width: 50%;
+}
+
+.card, .view_item{
+  background-color: #151619;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
 @media screen and (min-width: 930px){
   .media{
     width: 50%;
   }
+  .width_error{
+    width: 30%;
+  }
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button_hover2:hover{
+  background-color: #87CEFA !important;
+}
+
+#link_index2{
+  color: #000;
+}
+
+.img_product_view{
+  width: 40%;
+}
+
+.item{
+  float: right;
+  height: 15em;
 }

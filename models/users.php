@@ -1,9 +1,6 @@
 <?php
 
-function getDB(){
-    $bdd = new PDO("mysql:host=localhost:3307;dbname=monprojet;charset=utf8", "root", "");
-    return $bdd;
-}
+include_once("models/db.php");
 
 function getUserByLogin($login){
     $reponse = getDB()->prepare("SELECT * FROM users WHERE login = :login");
@@ -25,20 +22,6 @@ function addUser($login, $password, $mail){
     $reponse = getDB()->prepare("INSERT INTO users(login, password, mail, type) VALUES (:login, :password, :mail, 'user')");
     $password = password_hash($password, PASSWORD_DEFAULT);
     $reponse->execute([":password" => $password, ":login" => $login, "mail" => $mail]);
-    $reponse->closeCursor();
-}
-
-function getProductbyTitle($title){
-    $reponse = getDB()->prepare("SELECT * FROM products WHERE title = :title");
-    $reponse->execute([":title" => $title]);
-    $product = $reponse->fetch();
-    $reponse->closeCursor();
-    return $product;
-}
-
-function addProduct($title, $descr, $price){
-    $reponse = getDB()->prepare("INSERT INTO products(title, descr, price) VALUES (:title, :descr, :price)");
-    $reponse->execute([":title" => $title, ":descr" => $descr, ":price" => $price]);
     $reponse->closeCursor();
 }
 

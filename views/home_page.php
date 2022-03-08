@@ -12,9 +12,6 @@
                 <br/><br/><span class="bi bi-check-lg"> Torréfié artisanalement.</span>
                 <br/><br/><span class="bi bi-check-lg"> Livré à votre porte.</span>
             </h5>
-            <button type="button" class="btn btn-danger w-25 mt-4 border border-dark border-3 button_hover" id="link_index" href="#">
-                <h5 class="mt-1">Venez découvrir notre gamme</h5>
-            </button>
-            </span>
+            <a class="button btn btn-danger w-25 mt-4 border border-dark border-3 button_hover" id="link_index" href="products">Venez découvrir notre gamme</a>
         </div>
 </div>

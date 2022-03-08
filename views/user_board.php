@@ -1,4 +1,4 @@
-<?php include("models/users.php"); ?>
+<?php include_once("models/users.php"); ?>
 
 <div class="dropdown ms-auto px-4">
   <button class="btn btn-style dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
