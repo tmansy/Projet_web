@@ -13,8 +13,8 @@ else{
 }
 
 if(REQ_TYPE_ID){
-    $product_with_space = str_replace("%20", " ", REQ_TYPE_ID);
-    $product = getProductByTitle($product_with_space);
+    $article = str_replace("-", " ", REQ_TYPE_ID);
+    $product = getProductByTitle($article);
     if(REQ_ACTION == "edit"){
         if(!empty($_POST)){
             $taillemax = 2097152;
@@ -54,7 +54,7 @@ if(REQ_TYPE_ID){
         exit();
     }
     else if(REQ_ACTION == "delete"){
-        deleteProductByTitle($product_with_space);
+        deleteProductByTitle($article);
         header("Location: ".ROOT_PATH."products");
         exit();
     }

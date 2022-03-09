@@ -99,6 +99,10 @@ main{
   padding-right: 5px;
 }
 
+.bi-cart{
+  padding-right: 5px;
+}
+
 .input{
 	font-size: 20px;
 	padding: 10px 10px 10px 5px;
@@ -243,4 +247,8 @@ a.button {
 .item{
   float: right;
   height: 15em;
+}
+
+.quantite{
+  width: 10%;
 }

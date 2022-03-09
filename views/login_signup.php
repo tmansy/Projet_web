@@ -1,6 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 <div class="ms-auto">
+    <a class="btn btn-style" type="button" href="<?= ROOT_PATH.'cart/'.'mon-panier'?>"><i class="bi bi-cart"></i>Mon panier</a>
     <button type="button" class="btn btn-style login-btn"><i class="bi bi-box-arrow-in-right"></i>Se connecter</button>
     <button type="button" class="btn btn-style register-btn"><i class="bi bi-pencil-square"></i>S'inscrire</button>
 </div>  
@@ -30,7 +31,7 @@
             ?>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                        <form action="login" method="POST" >
+                        <form action="<?= ROOT_PATH.'login'?>" method="POST" >
                             <fiedlset>
                                 <div class="group1">
                                     <input required="" class="input" type="text" name="login_connexion"><span class="highlight"></span><span class="bar"></span>

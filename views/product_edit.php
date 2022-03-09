@@ -1,6 +1,6 @@
 <?php 
-$product_with_space = str_replace("%20", " ", REQ_TYPE_ID);
-$product = getProductByTitle($product_with_space); 
+$article = str_replace("-", " ", REQ_TYPE_ID);
+$product = getProductByTitle($article); 
 ?>
 
 <h3 class="form_new_product text-decoration-underline mt-4 ms-5 mb-3"><strong>Formulaire d'édition d'articles</strong></h3>
@@ -25,3 +25,4 @@ $product = getProductByTitle($product_with_space);
         <button class="btn btn-style mb-4" type="submit">Modifier</button>
     </form>
 </div>
+<br/>

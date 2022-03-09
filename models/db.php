@@ -1,7 +1,10 @@
 <?php
 
+include_once("app/config.php");
+
 function getDB(){
-    $bdd = new PDO("mysql:host=localhost:3307;dbname=monprojet;charset=utf8", "root", "");
+    global $db_url, $db_login, $db_pass;
+    $bdd = new PDO($db_url, $db_login, $db_pass);
     return $bdd;
 }
 

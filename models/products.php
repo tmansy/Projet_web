@@ -10,6 +10,14 @@ function getProductByTitle($title){
     return $product;
 }
 
+function getProductById($id){
+    $reponse = getDB()->prepare("SELECT * FROM products WHERE id = :id");
+    $reponse->execute([":id" => $id]);
+    $product = $reponse->fetch();
+    $reponse->closeCursor();
+    return $product;
+}
+
 function addProduct($title, $descr, $price, $img, $detailed_descr){
     $reponse = getDB()->prepare("INSERT INTO products(title, descr, img, price, detailed_descr) VALUES (:title, :descr, :img, :price, :detailed_descr)");
     $reponse->execute([":title" => $title, ":descr" => $descr, ":img" => $img, ":price" => $price, ":detailed_descr" => $detailed_descr]);
