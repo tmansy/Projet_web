@@ -1,7 +1,19 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+<?php
+if(isset($_SESSION["cart"])){
+    $num_items_in_panier = count($_SESSION["cart"]);
+}
+?>
+
 <div class="ms-auto">
-    <a class="btn btn-style" type="button" href="<?= ROOT_PATH.'cart/'.'mon-panier'?>"><i class="bi bi-cart"></i>Mon panier</a>
+    <a class="btn btn-style" type="button" href="<?= ROOT_PATH.'cart/'.'mon-panier'?>"><i class="bi bi-cart"></i>
+    <?php 
+    if(isset($num_items_in_panier)){
+        echo "<span class='pe-1'>".$num_items_in_panier."</span>";
+        }
+    ?>
+    Mon panier</a>
     <button type="button" class="btn btn-style login-btn"><i class="bi bi-box-arrow-in-right"></i>Se connecter</button>
     <button type="button" class="btn btn-style register-btn"><i class="bi bi-pencil-square"></i>S'inscrire</button>
 </div>  

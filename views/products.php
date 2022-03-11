@@ -5,6 +5,11 @@ if(!empty($_SESSION["error"])){
     unset($_SESSION["error"]);
 }
 
+if(!empty($_SESSION["message"])){
+    echo "<div class='d-flex justify-content-center'><div class='alert alert-success text-center mt-3 ms-3'>".$_SESSION["message"]."</div></div>";
+    unset($_SESSION["message"]);
+}
+
 if($_SESSION["isAdmin"]){
     echo '<div class="d-flex justify-content-center"><a class="button btn btn-danger width_error text-center mt-3 border border-dark border-3 button_hover" id="link_index" href="new_product">Enregistrer un nouveau produit</a></div>';
 }

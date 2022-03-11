@@ -99,10 +99,6 @@ main{
   padding-right: 5px;
 }
 
-.bi-cart{
-  padding-right: 5px;
-}
-
 .input{
 	font-size: 20px;
 	padding: 10px 10px 10px 5px;
@@ -251,4 +247,23 @@ a.button {
 
 .quantite{
   width: 10%;
+}
+
+table{
+  color: #fff !important;
+}
+
+.delete{
+  font-size: 18px;
+}
+
+.input_style{
+    background-color: #8b1d31;
+    color: #fff;
+    font-weight: 500;
+    border-style: none;
+}
+
+.btn-height{
+  height: 2.3em;
 }

@@ -44,4 +44,12 @@ function setProduct($id, $title, $descr, $img, $price, $detailed_descr){
     $reponse->closeCursor();
 }
 
+function productInCart($array_to_question_marks, $produits_in_panier){
+    $reponse = getDB()->prepare('SELECT * FROM products WHERE id IN (' . $array_to_question_marks . ')');
+	$reponse->execute(array_keys($produits_in_panier));  
+	$produits = $reponse->fetchAll(PDO::FETCH_ASSOC);
+    $reponse->closeCursor(); 
+    return $produits;
+}
+
 ?>
