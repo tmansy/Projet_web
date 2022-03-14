@@ -15,7 +15,7 @@
     <header> 
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent border-bottom">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="/public/img/logo.png" alt="Logo Cafe" width="60px" height="60px" id="logo"></a>
+                <a class="navbar-brand" href="<?= ROOT_PATH?>"><img src="/public/img/logo.png" alt="Logo Cafe" width="60px" height="60px" id="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

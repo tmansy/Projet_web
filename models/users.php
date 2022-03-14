@@ -5,7 +5,7 @@ include_once("models/db.php");
 function getUserByLogin($login){
     $reponse = getDB()->prepare("SELECT * FROM users WHERE login = :login");
     $reponse->execute([":login" => $login]);
-    $user = $reponse->fetch();
+    $user = $reponse->fetch(PDO::FETCH_ASSOC);
     $reponse->closeCursor();
     return $user;
 }

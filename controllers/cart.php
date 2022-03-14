@@ -2,6 +2,8 @@
 
 include("app/controllers.php");
 include_once("models/products.php");
+include_once("models/users.php");
+include_once("models/order.php");
 
 $nav = "nav";
 if(empty($_SESSION["login"])){
@@ -12,7 +14,8 @@ else{
     $register = "user_board";
 }
 
-if(REQ_TYPE_ID){
+if(REQ_TYPE){
+
     if(isset($_POST["update"]) && isset($_SESSION["cart"])){
         foreach($_POST as $k => $v){
             if(strpos($k, "quantite") !== false && is_numeric($v)){
@@ -24,15 +27,12 @@ if(REQ_TYPE_ID){
             }
         }
     }
+
     if(isset($_POST["delete"]) && isset($_SESSION["cart"])){
         $id = $_POST["delete"];
         unset($_SESSION["cart"][$id]);
     }
-    $content = "cart";
-    render(compact("register", "content", "nav"));
-    exit();
-}
-else{
+
     if(isset($_POST["product_id"], $_POST["quantite"]) && is_numeric($_POST["product_id"]) && is_numeric($_POST["quantite"])){
         $product_id = $_POST["product_id"];
         $quantite = $_POST["quantite"];
@@ -63,6 +63,23 @@ else{
             exit();
         }
     }
+
+    if(isset($_POST["submit"]) && isset($_SESSION["cart"])){
+        $user = getUserByLogin($_SESSION["login"]);
+        newOrder($user["id"]);
+        $order_id = getBookIdByUser($user["id"]);
+        foreach($_SESSION["produits"] as $produit){
+            userIdToBookId($_SESSION["cart"][$produit["id"]], $order_id["id"] ,$produit["id"], $produit["price"]);
+            unset($_SESSION["cart"][$produit["id"]]);
+        }
+        $content = "success_order";
+        render(compact("register", "content", "nav"));
+        exit();
+    }
+
+    $content = "cart";
+    render(compact("register", "content", "nav"));
+    exit();
 }
 
 ?>

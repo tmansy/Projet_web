@@ -7,15 +7,16 @@ if(isset($_SESSION["cart"])){
 ?>
 
 <div class="ms-auto">
-    <a class="btn btn-style" type="button" href="<?= ROOT_PATH.'cart/'.'mon-panier'?>"><i class="bi bi-cart"></i>
+    <button type="button" class="btn btn-style login-btn"><i class="bi bi-box-arrow-in-right"></i>Se connecter</button>
+    <button type="button" class="btn btn-style register-btn"><i class="bi bi-pencil-square"></i>S'inscrire</button>
+    <a class="btn btn-style" type="button" href="<?= ROOT_PATH.'cart'?>"><i class="bi bi-cart"></i>
     <?php 
     if(isset($num_items_in_panier)){
         echo "<span class='pe-1'>".$num_items_in_panier."</span>";
         }
     ?>
-    Mon panier</a>
-    <button type="button" class="btn btn-style login-btn"><i class="bi bi-box-arrow-in-right"></i>Se connecter</button>
-    <button type="button" class="btn btn-style register-btn"><i class="bi bi-pencil-square"></i>S'inscrire</button>
+    Mon panier
+    </a>
 </div>  
 
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
