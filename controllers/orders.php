@@ -14,7 +14,7 @@ else{
     $register = "user_board";
 }
 
-$content = "order_status";
+$content = "orders";
 render(compact("register", "content", "nav"));
 exit();
 

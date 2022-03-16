@@ -1,6 +1,6 @@
 <?php 
 
-$books = getAllBooksByUser($_SESSION["login"]); 
+$books = getAllBooks(); 
 $formated_books = formattedBook($books);
 
 ?>
@@ -27,11 +27,10 @@ $formated_books = formattedBook($books);
                         </ul>
                     <?php endforeach; ?><br/>
                     <span class="fs-5 text-decoration-underline">Sous total de la commande</span> : <?= $sousTot ?>€</br/>
-                    <span class="fs-5 text-decoration-underline">Statut de la commande</span> : <?= $book["statut"]; if($book["statut"] == "En attente"){ echo " de confirmation";}?>
+                    <span class="fs-5 text-decoration-underline">Statut de la commande</span> : <?= $book["statut"]; if($book["statut"] == "En attente"){ echo " de confirmation";}?><br/><br/>
                 </div>
             </div>
         </div>
     </div>
 <?php $x++; ?>
 <?php endforeach; ?>
-

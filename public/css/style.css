@@ -267,3 +267,11 @@ table{
 .btn-height{
   height: 2.3em;
 }
+
+.accordion-body{
+  color: #000;
+}
+
+.accordion-item > .accordion-header{
+  background-color: #fff !important;
+}

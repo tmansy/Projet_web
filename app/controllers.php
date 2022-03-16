@@ -40,4 +40,26 @@ function lowerAndNoAccent($product){
     return $product;
 }
 
+//Tableau de tableau qui contient un tableau de tableau, 2 niveaux de tableaux
+function formattedBook($books){
+    $formatted_book = [];
+    $num_book = -1;
+    $array_book = 0;
+    for($i=0; $i<count($books); $i++){
+        if($books[$i]["numCommande"] != $num_book){
+            $formatted_book[$i]["numCommande"] = $books[$i]["numCommande"];
+            $num_book = $formatted_book[$i]["numCommande"];
+            $formatted_book[$i]["login"] = $books[$i]["login"];
+            $formatted_book[$i]["statut"] = $books[$i]["statut"];
+            $formatted_book[$i]["articlesArray"] = [];
+            array_push($formatted_book[$i]["articlesArray"], array("ArticlesNoms" => $books[$i]["nomProduit"], "ArticlesQuantite" => $books[$i]["quantite"], "ArticlesPrix" => $books[$i]["prix"]));
+            $array_book = $i;
+        }
+        else{
+            array_push($formatted_book[$array_book]["articlesArray"], array("ArticlesNoms" => $books[$i]["nomProduit"], "ArticlesQuantite" => $books[$i]["quantite"], "ArticlesPrix" => $books[$i]["prix"]));
+        } 
+    }
+    return $formatted_book;
+}
+
 ?>

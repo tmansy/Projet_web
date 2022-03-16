@@ -20,11 +20,11 @@ if(isset($_SESSION["cart"])){
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="#">Mon compte</a></li>
     <li><a class="dropdown-item" href="<?= ROOT_PATH.'order_status'?>">Statut de mes commandes</a></li>
-    <?php 
-    if($_SESSION["isAdmin"]){
-      echo "<li><a class='dropdown-item' href='#'>Ajouter un utilisateur</a></li>";
-    }
-    ?>
+    <?php if($_SESSION["isAdmin"]): ?>
+      <li><a class='dropdown-item' href='<?= ROOT_PATH.'order_confirmation'?>'>Valider les commandes</a></li>
+      <li><a class='dropdown-item' href='<?= ROOT_PATH.'orders'?>'>Voir toutes les commandes</a></li>
+      <li><a class='dropdown-item' href='#'>Ajouter un utilisateur / admin</a></li>
+    <?php endif; ?>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="<?= ROOT_PATH.'logout' ?>">Se déconnecter</a></li>
   </ul>

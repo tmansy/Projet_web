@@ -14,7 +14,20 @@ else{
     $register = "user_board";
 }
 
-$content = "order_status";
+if(REQ_TYPE_ID){
+    if(REQ_ACTION == "confirm"){
+        confirmedBook(REQ_TYPE_ID);
+        header("Location: ".ROOT_PATH."order_confirmation");
+        exit();
+    }
+    if(REQ_ACTION == "delete"){
+        deleteBook(REQ_TYPE_ID);
+        header("Location: ".ROOT_PATH."order_confirmation");
+        exit();
+    }
+}
+
+$content = "order_confirmation";
 render(compact("register", "content", "nav"));
 exit();
 
