@@ -58,4 +58,15 @@ function userIdToBookId($quantite, $order_id ,$product_id, $product_price){
     $reponse->closeCursor();
 }
 
+function productsStats(){
+    $reponse = getDB()->prepare("SELECT p.title as nomProduit, SUM(quantite) as quantiteProduit FROM book_item AS bi INNER JOIN products AS p ON bi.item_id = p.id GROUP BY p.title ORDER BY SUM(quantite) DESC LIMIT 5;");
+    $reponse->execute();
+    while($ligne = $reponse->fetch(PDO::FETCH_ASSOC)){
+        $data[] = $ligne;
+    }
+    $json_data = json_encode($data);
+    $reponse->closeCursor();
+    return $json_data;
+}
+
 ?>

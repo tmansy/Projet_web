@@ -275,3 +275,7 @@ table{
 .accordion-item > .accordion-header{
   background-color: #fff !important;
 }
+
+.chart{
+  background-color: #fff;
+}

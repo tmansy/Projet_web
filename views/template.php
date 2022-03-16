@@ -35,8 +35,10 @@
 
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/public/js/bootstrap.js"></script>
     <script type="text/javascript" src="/public/js/typewriter.js"></script>
+    <script type="text/javascript" src="/public/js/chart.js"></script>
     <script type="text/javascript" src="/public/js/shadow_modal.js"></script>
     <script type="text/javascript" src="/public/js/login_form.js"></script>
     <script type="text/javascript" src="/public/js/swap_login_btn.js"></script>

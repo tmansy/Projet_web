@@ -23,6 +23,7 @@ if(isset($_SESSION["cart"])){
     <?php if($_SESSION["isAdmin"]): ?>
       <li><a class='dropdown-item' href='<?= ROOT_PATH.'order_confirmation'?>'>Valider les commandes</a></li>
       <li><a class='dropdown-item' href='<?= ROOT_PATH.'orders'?>'>Voir toutes les commandes</a></li>
+      <li><a class='dropdown-item' href='<?= ROOT_PATH.'stats'?>'>Satistique des commandes</a></li>
       <li><a class='dropdown-item' href='#'>Ajouter un utilisateur / admin</a></li>
     <?php endif; ?>
     <li><hr class="dropdown-divider"></li>
