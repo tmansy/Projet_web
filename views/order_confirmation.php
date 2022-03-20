@@ -5,6 +5,7 @@ $formated_books = formattedBook($books);
 
 ?>
 
+<?php if($books): ?>
 <?php $x = 0 ?>
 <?php foreach($formated_books as $book): ?>
     <?php $prixTot = 0; $sousTot = 0 ?>
@@ -36,4 +37,7 @@ $formated_books = formattedBook($books);
     </div>
 <?php $x++; ?>
 <?php endforeach; ?>
+<?php else: ?>
+    <div class="bg-primary text-black w-25 border border-2 mt-3 mx-3 text-center">Aucune commande en cours à valider</div>
+<?php endif; ?>
 

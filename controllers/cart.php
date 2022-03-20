@@ -65,12 +65,14 @@ if(REQ_TYPE){
     }
 
     if(isset($_POST["submit"]) && isset($_SESSION["cart"])){
-        $user = getUserByLogin($_SESSION["login"]);
-        newOrder($user["id"]);
-        $order_id = getLastBookIdByUser($user["id"]);
-        foreach($_SESSION["produits"] as $produit){
-            userIdToBookId($_SESSION["cart"][$produit["id"]], $order_id["id"] ,$produit["id"], $produit["price"]);
-            unset($_SESSION["cart"][$produit["id"]]);
+        if(isset($_SESSION["login"])){
+            $user = getUserByLogin($_SESSION["login"]);
+            newOrder($user["id"]);
+            $order_id = getLastBookIdByUser($user["id"]);
+            foreach($_SESSION["produits"] as $produit){
+                userIdToBookId($_SESSION["cart"][$produit["id"]], $order_id["id"] ,$produit["id"], $produit["price"]);
+                unset($_SESSION["cart"][$produit["id"]]);
+            }
         }
         $content = "success_order";
         render(compact("register", "content", "nav"));

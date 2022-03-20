@@ -18,17 +18,5 @@ $content = "stats";
 render(compact("register", "content", "nav"));
 exit();
 
-
-
-/*
-
-$best_selling_products = productsStats();
-
-foreach($best_selling_products as $data){
-    $title[] = $data["title"];
-    $totQuantite[] = $data["totQuantite"];
-}
-*/
-
 ?>
 

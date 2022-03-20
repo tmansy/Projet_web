@@ -29,7 +29,7 @@ $product = getProducts();
                 <div class="card-body">
                     <h5 class="card-title text-decoration-underline"><?= $product[$i]["title"] ?></h5>
                     <p class="card-text"><?= $product[$i]["descr"] ?></p>
-                    <p class="card-text"><?= $product[$i]["price"] ?>€</p>
+                    <p class="card-text"><?= $product[$i]["price"] ?> €/kg</p>
                 </div>
                 <?php 
                     $article = lowerAndNoAccent($product[$i]["title"]);

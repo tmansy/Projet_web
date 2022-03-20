@@ -237,7 +237,7 @@ a.button {
 }
 
 .img_product_view{
-  width: 40%;
+  border: #000 3px solid;
 }
 
 .item{
@@ -278,4 +278,6 @@ table{
 
 .chart{
   background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
 }

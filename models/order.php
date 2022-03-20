@@ -59,7 +59,7 @@ function userIdToBookId($quantite, $order_id ,$product_id, $product_price){
 }
 
 function productsStats(){
-    $reponse = getDB()->prepare("SELECT p.title as nomProduit, SUM(quantite) as quantiteProduit FROM book_item AS bi INNER JOIN products AS p ON bi.item_id = p.id GROUP BY p.title ORDER BY SUM(quantite) DESC LIMIT 5;");
+    $reponse = getDB()->prepare("SELECT p.title as nomProduit, SUM(quantite) as quantiteProduit FROM book_item AS bi INNER JOIN products AS p ON bi.item_id = p.id INNER JOIN book as b ON b.id = bi.book_id WHERE b.status_id = 2 GROUP BY p.title ORDER BY SUM(quantite) DESC LIMIT 5;");
     $reponse->execute();
     while($ligne = $reponse->fetch(PDO::FETCH_ASSOC)){
         $data[] = $ligne;

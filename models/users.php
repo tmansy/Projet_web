@@ -25,4 +25,11 @@ function addUser($login, $password, $mail){
     $reponse->closeCursor();
 }
 
+function addAdmin($login, $password, $mail){
+    $reponse = getDB()->prepare("INSERT INTO users(login, password, mail, type) VALUES (:login, :password, :mail, 'admin')");
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $reponse->execute([":password" => $password, ":login" => $login, "mail" => $mail]);
+    $reponse->closeCursor();
+}
+
 ?>

@@ -14,5 +14,6 @@ else{
 }
 
 render(compact("register", "content", "nav"));
+exit();
 
 ?>

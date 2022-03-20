@@ -34,3 +34,4 @@ $formated_books = formattedBook($books);
     </div>
 <?php $x++; ?>
 <?php endforeach; ?>
+<br/>

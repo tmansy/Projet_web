@@ -11,10 +11,12 @@ if(isset($_POST["login_inscription"]) && isset($_POST["password_inscription"]) &
     if(getUserByLogin($login)){
         $_SESSION["error"] = "Nom d'utilisateur déjà utilisé"; 
         header("Location: ".ROOT_PATH);
+        exit();
     }
     else if(getUserByMail($mail)){
         $_SESSION["error"] = "Adresse e-mail déjà utilisée"; 
         header("Location: ".ROOT_PATH);
+        exit();
     }
     else if($password == $password_verify){
         $_SESSION["login"] = $login;
@@ -25,6 +27,7 @@ if(isset($_POST["login_inscription"]) && isset($_POST["password_inscription"]) &
     else{
         $_SESSION["error"] = "Les mots de passe ne sont pas identiques";
         header("Location: ".ROOT_PATH); 
+        exit();
     }
 }
 
