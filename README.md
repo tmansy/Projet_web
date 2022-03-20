@@ -13,5 +13,5 @@ $db_pass: mot de passe de l'utilisateur utilisé pour la connexion à la db
 ($db_login).
 
 Créer une base de données MySQL ayant pour nom "monprojet" et procéder au
-restore du dump du fichier monprojet.sql accessible à la racine du
+restore du dump du fichier bddprojet.sql accessible à la racine du
 répertoire.
