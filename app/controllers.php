@@ -40,7 +40,6 @@ function lowerAndNoAccent($product){
     return $product;
 }
 
-//Tableau de tableau qui contient un tableau de tableau, 2 niveaux de tableaux
 function formattedBook($books){
     $formatted_book = [];
     $num_book = -1;
