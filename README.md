@@ -1,5 +1,5 @@
 # Projet_Web
-Projet site web e-commerce pour le cours "Projet développement web".
+Projet site web e-commerce pour le cours "Projet développement web" de mon bachelier d'informatique de gestion.
 
 Editer les variables $db_url, $db_login, $db_pass dans le fichier app/config.php.
 
